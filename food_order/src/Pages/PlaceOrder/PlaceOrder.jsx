@@ -35,13 +35,18 @@ const onChangeHandler = (e) => {
 const placeOrder = async (e) => {
           e.preventDefault();
           let orderItems = [];
-          food_list.map((item)=>{
-            if (cartItems[item._id]>0) {
-              let itemInfo = item;
-              itemInfo["quantity"] = cartItems[item._id];
-              orderItems.push(itemInfo)
-            }
-          })
+food_list.map((item)=>{
+  if (cartItems[item._id]>0) {
+    let itemInfo = {
+      _id: item._id,
+      name: item.name,
+      price: item.price,
+      quantity: cartItems[item._id]
+    };
+    orderItems.push(itemInfo)
+  }
+})
+
 
          let orderData = {
           address:data,
