@@ -34,8 +34,12 @@ origin: ["https://varufoods.onrender.com", "https://admin-vfdx.onrender.com"],
 }))
 
 
-// Serve uploaded images statically
-app.use('/uploads', express.static('uploads'))
+
+
+
+app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')))
+app.use("/images",express.static(path.join(process.cwd(), 'uploads')))
+
 
 //db connection
 connectDB();
