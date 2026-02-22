@@ -28,7 +28,8 @@ app.use(express.urlencoded({limit: '50mb', extended: true}))
 
 // app.use(cors())
 app.use(cors({
-  origin: "https://varufoods.onrender.com",
+ // javascript
+origin: ["https://varufoods.onrender.com", "https://admin-vfdx.onrender.com"],
   credentials: true
 }))
 
