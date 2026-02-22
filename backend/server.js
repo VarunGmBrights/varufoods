@@ -8,6 +8,14 @@ import 'dotenv/config'
 import cartRouter from './routes/cartRoute.js'
 import orderRouter from './routes/orderRoute.js'
 
+
+import fs from 'fs'
+if (!fs.existsSync('uploads')){
+    fs.mkdirSync('uploads')
+}
+
+
+
 //app config
 
 const app = express()
