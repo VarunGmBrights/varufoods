@@ -38,7 +38,7 @@ origin: ["https://varufoods.onrender.com", "https://admin-vfdx.onrender.com"],
 
 
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')))
-app.use("/images",express.static(path.join(process.cwd(), 'uploads')))
+
 
 
 //db connection
@@ -48,7 +48,7 @@ connectDB();
 // api endpoint
 app.use("/api/food",foodRouter)
 
-app.use("/images",express.static('uploads'))
+
 app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
